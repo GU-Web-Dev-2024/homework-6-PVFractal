@@ -32,7 +32,6 @@ Last Modified: 10/17
             $timer.css({
                 padding: "10px",
                 textAlign: "center",
-                width: "150px",
                 borderRadius: "15px",
                 backgroundColor: "rgb(150,100,0)"
             });
@@ -56,6 +55,17 @@ Last Modified: 10/17
                     width: "",
                     height: ""
                 });
+            });
+
+            $(".wrapper").css({
+                padding: "5px 50px",
+                width: "300px",
+                textAlign: "center",
+                borderRadius: "15px",
+                backgroundColor: "rgb(250,150,50)"
+            });
+            $(".wrapper h1").css({
+                fontFamily: "cursive"
             });
 
 
@@ -133,8 +143,7 @@ Last Modified: 10/17
 
 <body>
     <div class="wrapper">
-        <h1>Stopwatch</h1>
-        <h2>Vanilla JavaScript Stopwatch</h2>
+        <h1>jQuery Stopwatch</h1>
         <p id="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
         <button id="button-start">Start</button>
         <button id="button-stop">Stop</button>
