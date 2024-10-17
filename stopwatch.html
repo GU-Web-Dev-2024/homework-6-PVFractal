@@ -1,7 +1,10 @@
-<!-- 
-    HW6 Starter code
-     Modified from: https://codepen.io/cathydutton/pen/GBcvo
-    -->
+<!--
+Name Peter Vahlberg
+Class: CPSC 332
+Assignment: HW6
+Last Modified: 10/17
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,52 +16,52 @@
         window.onload = function () {
             var seconds = "00";
             var tens = "00";
-            var appendTens = document.getElementById("tens")
-            var appendSeconds = document.getElementById("seconds")
-            var buttonStart = document.getElementById('button-start');
-            var buttonStop = document.getElementById('button-stop');
-            var buttonReset = document.getElementById('button-reset');
+            var $appendTens = $("#tens");
+            var $appendSeconds = $("#seconds");
+            var $buttonStart = $('#button-start');
+            var $buttonStop = $('#button-stop');
+            var $buttonReset = $('#button-reset');
             var interval;
 
-            buttonStart.onclick = function () {
+            $buttonStart.on("click", function() {
                 clearInterval(interval);
                 interval = setInterval(startTimer, 10);
-            }
+            });
 
-            buttonStop.onclick = function () {
+            $buttonStop.on("click", function() {
                 clearInterval(interval);
-            }
+            });
 
-            buttonReset.onclick = function () {
+            $buttonReset.on("click", function() {
                 clearInterval(interval);
                 tens = "00";
                 seconds = "00";
-                appendTens.innerHTML = tens;
-                appendSeconds.innerHTML = seconds;
-            }
+                $appendTens.html(tens);
+                $appendSeconds.html(seconds);
+            });
 
             function startTimer() {
                 tens++;
 
                 if (tens < 9) {
-                    appendTens.innerHTML = "0" + tens;
+                    $appendTens.html("0" + tens);
                 }
 
                 if (tens > 9) {
-                    appendTens.innerHTML = tens;
+                    $appendTens.html(tens);
 
                 }
 
                 if (tens > 99) {
                     console.log("seconds");
                     seconds++;
-                    appendSeconds.innerHTML = "0" + seconds;
+                    $appendSeconds.html( "0" + seconds);
                     tens = 0;
-                    appendTens.innerHTML = "0" + 0;
+                    $appendTens.html("0" + tens);
                 }
 
                 if (seconds > 9) {
-                    appendSeconds.innerHTML = seconds;
+                    $appendSeconds.html(seconds);
                 }
             }
         }
