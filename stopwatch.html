@@ -36,6 +36,27 @@ Last Modified: 10/17
                 backgroundColor: "rgb(150,100,0)"
             });
 
+            $buttonStart.addClass("button-style");
+            $buttonStop.addClass("button-style");
+            $buttonReset.addClass("button-style");
+
+            $(".button-style").css({
+                backgroundColor: "orange",
+                borderRadius: "5px"
+            });
+            $(".button-style").on("mouseover", function(){
+                $(event.target).css({
+                    width: "50px",
+                    height: "30px"
+                });
+            });
+            $(".button-style").on("mouseout", function(){
+                $(event.target).css({
+                    width: "",
+                    height: ""
+                });
+            });
+
 
 
             $buttonStart.on("click", function() {
@@ -48,7 +69,7 @@ Last Modified: 10/17
 
             $buttonStop.on("click", function() {
                 clearInterval(interval);
-                if (seconds !== "00"){
+                if (seconds !== "00" || tens !== "00"){
                     $timer.css({
                         backgroundColor: "rgb(250,100,50)"
                     });
